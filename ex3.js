@@ -30,7 +30,7 @@ const deleteTaskByTaskName = (deleteTask) => {
     //strArray.indexOf(deleteTask)>=0? strArray.splice(strArray.indexOf(deleteTask),1) : console.log("Sorry that task is not in the list.");
     if (strArray.indexOf(deleteTask) >= 0) {
         strArray.splice(strArray.indexOf(deleteTask),1)
-        console.log(`We have just removed "${deleteTask} from your list."`)
+        console.log(`We have just removed "${deleteTask}" from your list."`)
         return strArray.length;
     } else {
         console.log("Sorry that task is not in the list.")
@@ -38,4 +38,17 @@ const deleteTaskByTaskName = (deleteTask) => {
 }
 
 console.log("Current tasks: "+deleteTaskByTaskName("Research for school work"));
+listAllTask();
+
+const deleteTaskByTaskNumber = (deleteTask) => {
+    if (deleteTask>0 && deleteTask<=strArray.length) {
+        strArray.splice((deleteTask-1),1)
+        console.log(`We have just removed task number ${deleteTask} from your list.`)
+        return strArray.length;
+    } else {
+        console.log("Sorry that task is not in the list.");
+    }
+}
+
+deleteTaskByTaskNumber(1);
 listAllTask();
